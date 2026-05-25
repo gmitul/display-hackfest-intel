@@ -30,7 +30,7 @@ Enabling Smooth Sync reduces async flip throughput. The higher the level, the gr
 
 Test: `kms_async_flips --r async-flip-speed-test` on Wildcat Lake (Linux 6.19.0-rc4) on an HD display
 
-| Subtest | Baseline (flips/vsync) | Level 1 (flips/vsync) | Level 5 (flips/vsync)|
+| Subtest | Baseline (flips/vblank) | Level 1 (flips/vblank) | Level 5 (flips/vblank)|
 |---------|----------|---------|---------|
 | pipe-A-eDP-1-4 | 6537 | 3109 | 713 |
 | pipe-B-eDP-1-4 | 6600 | 2543 | 712 |
