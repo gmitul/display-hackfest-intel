@@ -23,3 +23,17 @@
 ![](images/enable_tr_4_frame-kms_chamelium_frames-hdmi-frame-dump-(null)-3.png)
 - Level 5
 ![](images/enable_tr_5_frame-kms_chamelium_frames-hdmi-frame-dump-(null)-0.png)
+
+## Performance penalty
+
+Enabling Smooth Sync reduces async flip throughput. The higher the level, the greater the performance cost.
+
+Test: `kms_async_flips --r async-flip-speed-test` on Wildcat Lake (Linux 6.19.0-rc4) on an HD display
+
+| Subtest | Baseline (flips/vsync) | Level 1 (flips/vsync) | Level 5 (flips/vsync)|
+|---------|----------|---------|---------|
+| pipe-A-eDP-1-4 | 6537 | 3109 | 713 |
+| pipe-B-eDP-1-4 | 6600 | 2543 | 712 |
+| pipe-C-eDP-1-4 | 6538 | 3177 | 713 |
+
+At level 1 the flip count drops to ~50% and at level 5 it drops to ~10% of the baseline.
