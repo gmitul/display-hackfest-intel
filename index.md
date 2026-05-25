@@ -1,3 +1,3 @@
 # Display Hackfest Intel
 
-- [2026](2026.md)
+- [2026](2026)
